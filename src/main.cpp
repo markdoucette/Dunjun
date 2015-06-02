@@ -56,6 +56,7 @@ int main(int argc, char** argv)
 			glfwDestroyWindow(window);
 			window = newWindow;
 			glfwMakeContextCurrent(window);
+
 		}
 	}
 
