@@ -45,8 +45,9 @@ int main(int argc, char** argv)
 			GLFWwindow* newWindow;
 			if (fullscreen)
 			{
-				newWindow = glfwCreateWindow(2880, 1800, TITLE, glfwGetPrimaryMonitor(), window);
-
+				GLFWmonitor* monitor = glfwGetPrimaryMonitor();
+				const GLFWvidmode* mode = glfwGetVideoMode(monitor);
+				newWindow = glfwCreateWindow(mode->width, mode->height, TITLE, glfwGetPrimaryMonitor(), window);
 			}
 			else {
 				newWindow = glfwCreateWindow(WIN_WIDTH, WIN_HEIGHT, TITLE, nullptr, window);
